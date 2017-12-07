@@ -46,7 +46,7 @@ public class Rubik
         //Console.WriteLine(c2);
         Cube c2 = DepthFirst.greedyCross(start, lst);
         Console.WriteLine(c2);
-        foreach (int rotate in c2.getSolvePath())
+        foreach (String rotate in c2.getSolvePath())
         {
             Console.Write(rotate + " ");
         }
@@ -66,7 +66,7 @@ public class Rubik
 
         public Side front, back, left, right, top, bottom, holder;
 
-        private List<int> shufflePath, solvePath;
+        private List<String> shufflePath, solvePath;
 
 
 
@@ -147,9 +147,9 @@ public class Rubik
 
             this.holder = new Side(0);
 
-            this.shufflePath = new List<int>();
+            this.shufflePath = new List<String>();
 
-            this.solvePath = new List<int>();
+            this.solvePath = new List<String>();
 
 
 
@@ -178,9 +178,9 @@ public class Rubik
 
             this.holder = new Side(0);
 
-            this.shufflePath = new List<int>();
+            this.shufflePath = new List<String>();
 
-            this.solvePath = new List<int>();
+            this.solvePath = new List<String>();
 
 
 
@@ -260,7 +260,7 @@ public class Rubik
 
                         this.rotateLeftClockwise();
 
-                        this.shufflePath.Add(0);
+                        this.shufflePath.Add("Z1-");
 
                         break;
 
@@ -268,7 +268,7 @@ public class Rubik
 
                         this.rotateRightClockwise();
 
-                        this.shufflePath.Add(2);
+                        this.shufflePath.Add("Z3+");
 
                         break;
 
@@ -276,7 +276,7 @@ public class Rubik
 
                         this.rotateTopClockwise();
 
-                        this.shufflePath.Add(4);
+                        this.shufflePath.Add("Y3+");
 
                         break;
 
@@ -284,7 +284,7 @@ public class Rubik
 
                         this.rotateBottomClockwise();
 
-                        this.shufflePath.Add(6);
+                        this.shufflePath.Add("Y1-");
 
                         break;
 
@@ -292,7 +292,7 @@ public class Rubik
 
                         this.rotateFrontClockwise();
 
-                        this.shufflePath.Add(8);
+                        this.shufflePath.Add("X3+");
 
                         break;
 
@@ -300,7 +300,7 @@ public class Rubik
 
                         this.rotateBackClockwise();
 
-                        this.shufflePath.Add(10);
+                        this.shufflePath.Add("X1-");
 
                         break;
 
@@ -383,7 +383,7 @@ public class Rubik
             left.getSquare(2).setColor(holder.getSquare(0).getColor());
 
 
-            this.solvePath.Add(0);
+            this.solvePath.Add("Z1-");
 
         }
 
@@ -455,7 +455,7 @@ public class Rubik
             left.getSquare(3).setColor(holder.getSquare(1).getColor());
             left.getSquare(0).setColor(holder.getSquare(2).getColor());
 
-            this.solvePath.Add(1);
+            this.solvePath.Add("Z1+");
 
         }
 
@@ -527,7 +527,7 @@ public class Rubik
             right.getSquare(5).setColor(holder.getSquare(1).getColor());
             right.getSquare(2).setColor(holder.getSquare(0).getColor());
 
-            this.solvePath.Add(2);
+            this.solvePath.Add("Z3+");
 
         }
 
@@ -599,7 +599,7 @@ public class Rubik
             right.getSquare(3).setColor(holder.getSquare(1).getColor());
             right.getSquare(0).setColor(holder.getSquare(2).getColor());
 
-            this.solvePath.Add(3);
+            this.solvePath.Add("Z3-");
 
         }
 
@@ -648,7 +648,7 @@ public class Rubik
             top.getSquare(5).setColor(holder.getSquare(1).getColor());
             top.getSquare(2).setColor(holder.getSquare(0).getColor());
 
-            this.solvePath.Add(4);
+            this.solvePath.Add("Y3+");
 
         }
 
@@ -697,7 +697,7 @@ public class Rubik
             top.getSquare(3).setColor(holder.getSquare(1).getColor());
             top.getSquare(0).setColor(holder.getSquare(2).getColor());
 
-            this.solvePath.Add(5);
+            this.solvePath.Add("Y3-");
 
         }
 
@@ -746,7 +746,7 @@ public class Rubik
             bottom.getSquare(5).setColor(holder.getSquare(1).getColor());
             bottom.getSquare(2).setColor(holder.getSquare(0).getColor());
 
-            this.solvePath.Add(6);
+            this.solvePath.Add("Y1-");
 
         }
 
@@ -795,7 +795,7 @@ public class Rubik
             bottom.getSquare(3).setColor(holder.getSquare(1).getColor());
             bottom.getSquare(0).setColor(holder.getSquare(2).getColor());
 
-            this.solvePath.Add(7);
+            this.solvePath.Add("Y1+");
 
         }
 
@@ -868,7 +868,7 @@ public class Rubik
             front.getSquare(5).setColor(holder.getSquare(1).getColor());
             front.getSquare(2).setColor(holder.getSquare(0).getColor());
 
-            this.solvePath.Add(8);
+            this.solvePath.Add("X3+");
 
         }
 
@@ -941,7 +941,7 @@ public class Rubik
             front.getSquare(3).setColor(holder.getSquare(1).getColor());
             front.getSquare(0).setColor(holder.getSquare(2).getColor());
 
-            this.solvePath.Add(9);
+            this.solvePath.Add("X3-");
 
         }
 
@@ -1014,7 +1014,7 @@ public class Rubik
             back.getSquare(5).setColor(holder.getSquare(1).getColor());
             back.getSquare(2).setColor(holder.getSquare(0).getColor());
 
-            this.solvePath.Add(10);
+            this.solvePath.Add("X1-");
 
         }
 
@@ -1088,7 +1088,7 @@ public class Rubik
             back.getSquare(0).setColor(holder.getSquare(2).getColor());
 
 
-            this.solvePath.Add(11);
+            this.solvePath.Add("X1+");
 
         }
 
